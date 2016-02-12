@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InformaticsTrainerApp.Vew_Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,18 @@ namespace InformaticsTrainerApp.Presenters
 {
     class MainPresenter
     {
+        IMainView view;
+
+        public MainPresenter(IMainView view)
+        {
+            this.view = view;
+            
+            view.StudentModeClicked += View_StudentModeClicked;
+        }
+
+        private void View_StudentModeClicked()
+        {
+            view.OpenStudentMode();
+        }
     }
 }

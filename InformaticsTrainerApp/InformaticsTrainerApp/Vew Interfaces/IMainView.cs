@@ -8,5 +8,16 @@ namespace InformaticsTrainerApp.Vew_Interfaces
 {
     interface IMainView
     {
+        event Action StudentModeClicked;
+        event Action TeacherModeClicked;
+        event Action HelpClicked;
+        event Action ExitClicked;
+
+        
+
+        void OpenStudentMode();
+        void OpenTeacherMode();
+        void OpenHelp();
+        void Exit();
     }
 }

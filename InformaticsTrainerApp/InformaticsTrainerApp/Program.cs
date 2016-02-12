@@ -1,4 +1,6 @@
-﻿using InformaticsTrainerApp.Views;
+﻿using InformaticsTrainerApp.Presenters;
+using InformaticsTrainerApp.Vew_Interfaces;
+using InformaticsTrainerApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,10 @@ namespace InformaticsTrainerApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+
+            MainView mainView = new MainView();
+            MainPresenter mainPresenter = new MainPresenter(mainView);           
+            Application.Run(mainView);
         }
     }
 }

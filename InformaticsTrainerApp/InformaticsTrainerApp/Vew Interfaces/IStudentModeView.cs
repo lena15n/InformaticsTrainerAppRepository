@@ -8,5 +8,6 @@ namespace InformaticsTrainerApp.Vew_Interfaces
 {
     interface IStudentModeView
     {
+
     }
 }
