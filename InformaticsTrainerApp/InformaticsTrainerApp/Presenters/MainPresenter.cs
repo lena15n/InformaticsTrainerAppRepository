@@ -9,18 +9,25 @@ namespace InformaticsTrainerApp.Presenters
 {
     class MainPresenter
     {
-        IMainView view;
+        private readonly IMainView view;
+        //model is absent, we need not it
 
         public MainPresenter(IMainView view)
         {
             this.view = view;
             
-            view.StudentModeClicked += View_StudentModeClicked;
+            view.StudentModeClicked += (s) => View_StudentModeClicked(s);
         }
 
-        private void View_StudentModeClicked()
+        public void Run()
         {
-            view.OpenStudentMode();
+            view.Show();
+        }
+
+
+        private void View_StudentModeClicked(string s)
+        {
+            view.OpenStudentMode(s + " и т д");
         }
     }
 }

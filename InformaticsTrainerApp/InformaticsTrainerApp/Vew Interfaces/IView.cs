@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.Vew_Interfaces
 {
-    interface ITeacherModeView : IView
+    interface IView
     {
+        void Show();
+        void Close();
     }
 }

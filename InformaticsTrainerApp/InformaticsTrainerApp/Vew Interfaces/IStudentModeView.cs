@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.Vew_Interfaces
 {
-    interface IStudentModeView
+    interface IStudentModeView : IView
     {
 
     }

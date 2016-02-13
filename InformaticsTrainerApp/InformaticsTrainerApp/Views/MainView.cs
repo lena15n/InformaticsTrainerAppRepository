@@ -23,12 +23,13 @@ namespace InformaticsTrainerApp.Views
         {
             InitializeComponent();
 
-            button1.Click += (sender, args) => Invoke(StudentModeClicked);
+           // button1.Click += (sender, args) => Invoke(StudentModeClicked);
+            textBox1.TextChanged += (sender, args) => Invoke(StudentModeClicked, textBox1.Text);
         }
 
-        public void OpenStudentMode()
+        public void OpenStudentMode(string s)
         {
-            label1.Text = "finish it!";
+            label1.Text = s;
         }
 
         public void OpenTeacherMode()
@@ -41,12 +42,20 @@ namespace InformaticsTrainerApp.Views
 
         }
 
-        public void Exit()
+        public void Show()
         {
-
+            ShowDialog();
         }
 
-        public event Action StudentModeClicked;
+        public void Exit()
+        {
+            Close();
+        }
+
+
+
+
+        public event Action<string> StudentModeClicked;
         public event Action TeacherModeClicked;
         public event Action HelpClicked;
         public event Action ExitClicked;
@@ -54,6 +63,11 @@ namespace InformaticsTrainerApp.Views
         private void Invoke(Action action)
         {
             if (action != null) action();
+        }
+
+        public void OpenStudentMode()//remove this override method
+        {
+            throw new NotImplementedException();
         }
     }
 }
