@@ -20,6 +20,10 @@ namespace InformaticsTrainerApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
+
+
+
             MainView mainView = new MainView();
             MainPresenter mainPresenter = new MainPresenter(mainView);           
             Application.Run(mainView);

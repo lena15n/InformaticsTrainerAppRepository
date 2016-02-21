@@ -16,7 +16,9 @@ namespace InformaticsTrainerApp.Presenters
         {
             this.view = view;
             
-            view.StudentModeClicked += (s) => View_StudentModeClicked(s);
+            view.StudentModeClicked += () => View_StudentModeClicked();
+            view.TeacherModeClicked += () => View_TeacherModeClicked();
+
         }
 
         public void Run()
@@ -25,9 +27,14 @@ namespace InformaticsTrainerApp.Presenters
         }
 
 
-        private void View_StudentModeClicked(string s)
+        private void View_StudentModeClicked()
         {
-            view.OpenStudentMode(s + " и т д");
+            view.OpenStudentMode();
+        }
+
+        private void View_TeacherModeClicked()
+        {
+            view.OpenStudentMode();
         }
     }
 }

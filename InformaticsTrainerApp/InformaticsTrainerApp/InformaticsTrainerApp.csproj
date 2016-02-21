@@ -52,6 +52,7 @@
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\StudentModePresenter.cs" />
     <Compile Include="Presenters\TeacherModePresenter.cs" />
+    <Compile Include="Tools\FormUtils.cs" />
     <Compile Include="Vew Interfaces\ILoginView.cs" />
     <Compile Include="Vew Interfaces\IMainView.cs" />
     <Compile Include="Vew Interfaces\IStudentModeView.cs" />

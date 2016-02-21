@@ -1,4 +1,5 @@
-﻿using InformaticsTrainerApp.Vew_Interfaces;
+﻿using InformaticsTrainerApp.Tools;
+using InformaticsTrainerApp.Vew_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,18 +24,18 @@ namespace InformaticsTrainerApp.Views
         {
             InitializeComponent();
 
-           // button1.Click += (sender, args) => Invoke(StudentModeClicked);
-            textBox1.TextChanged += (sender, args) => Invoke(StudentModeClicked, textBox1.Text);
+            openStudentModeButton.Click += (sender, args) => Invoke(StudentModeClicked);
+            openTeacherModeButton.Click += (sender, args) => Invoke(TeacherModeClicked);
         }
 
-        public void OpenStudentMode(string s)
+        public void OpenStudentMode()
         {
-            label1.Text = s;
+            FormUtils.OpenFormAndSaveHierarchy(this, new StudentModeView());//, new Presenters.StudentModePresenter);
         }
 
         public void OpenTeacherMode()
         {
-
+            
         }
 
         public void OpenHelp()
@@ -55,7 +56,10 @@ namespace InformaticsTrainerApp.Views
 
 
 
-        public event Action<string> StudentModeClicked;
+
+        //--------------ACTIONS-----------------
+        
+        public event Action StudentModeClicked;
         public event Action TeacherModeClicked;
         public event Action HelpClicked;
         public event Action ExitClicked;
@@ -65,9 +69,5 @@ namespace InformaticsTrainerApp.Views
             if (action != null) action();
         }
 
-        public void OpenStudentMode()//remove this override method
-        {
-            throw new NotImplementedException();
-        }
     }
 }
