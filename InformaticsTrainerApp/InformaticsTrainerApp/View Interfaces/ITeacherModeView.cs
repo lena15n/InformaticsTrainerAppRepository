@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InformaticsTrainerApp.Vew_Interfaces
+namespace InformaticsTrainerApp.View_Interfaces
 {
-    interface IView
+    interface ITeacherModeView : IView
     {
-        void Show();
-        void Close();
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.Presenters
 {
-    class LoginPresenter
+    class LoginPresenter : IPresenter
     {
+        public void Run()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

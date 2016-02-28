@@ -1,5 +1,5 @@
 ﻿using InformaticsTrainerApp.Tools;
-using InformaticsTrainerApp.Vew_Interfaces;
+using InformaticsTrainerApp.View_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

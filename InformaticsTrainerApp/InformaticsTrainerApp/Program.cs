@@ -1,5 +1,6 @@
 ﻿using InformaticsTrainerApp.Presenters;
-using InformaticsTrainerApp.Vew_Interfaces;
+using InformaticsTrainerApp.Tools;
+using InformaticsTrainerApp.View_Interfaces;
 using InformaticsTrainerApp.Views;
 using System;
 using System.Collections.Generic;
@@ -21,12 +22,18 @@ namespace InformaticsTrainerApp
             Application.SetCompatibleTextRenderingDefault(false);
 
 
+            var controller = new ApplicationController(new LightInjectAdapder())
+        .RegisterView<ILoginView, LoginView>()
+        .RegisterService<IMainView, MainView>()
+        .RegisterView<IStudentModeView, StudentModeView>()
+        .RegisterService<ITeacherModeView, TeacherModeView>();
+
+            controller.Run<LoginPresenter>();
 
 
-
-            MainView mainView = new MainView();
-            MainPresenter mainPresenter = new MainPresenter(mainView);           
-            Application.Run(mainView);
+           /* MainView mainView = new MainView();
+            MainPresenter mainPresenter = new MainPresenter(mainView);
+            Application.Run(mainView);*/
         }
     }
 }

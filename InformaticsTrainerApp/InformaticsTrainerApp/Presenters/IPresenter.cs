@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.Presenters
 {
-    class StudentModePresenter : IPresenter
+    public interface IPresenter
     {
-        public void Run()
-        {
-            throw new NotImplementedException();
-        }
+        void Run();
+    }
+
+    public interface IPresenter<in TArg>
+    {
+        void Run(TArg argument);
     }
 }

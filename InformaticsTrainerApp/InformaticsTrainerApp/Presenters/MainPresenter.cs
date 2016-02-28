@@ -1,4 +1,4 @@
-﻿using InformaticsTrainerApp.Vew_Interfaces;
+﻿using InformaticsTrainerApp.View_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.Presenters
 {
-    class MainPresenter
+    class MainPresenter : IPresenter
     {
         private readonly IMainView view;
-        //model is absent, we need not it
+        //model is absent, we needn't it
 
         public MainPresenter(IMainView view)
         {
