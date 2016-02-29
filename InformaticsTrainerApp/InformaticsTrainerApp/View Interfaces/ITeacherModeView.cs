@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.View_Interfaces
 {
-    interface ITeacherModeView : IView
+    public interface ITeacherModeView : IView
     {
     }
 }

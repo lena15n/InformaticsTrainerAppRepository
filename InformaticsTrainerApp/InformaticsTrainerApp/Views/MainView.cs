@@ -20,8 +20,11 @@ namespace InformaticsTrainerApp.Views
     */
     public partial class MainView : Form, IMainView
     {
-        public MainView()
+        private readonly ApplicationContext context;
+
+        public MainView(ApplicationContext context)
         {
+            this.context = context;
             InitializeComponent();
 
             openStudentModeButton.Click += (sender, args) => Invoke(StudentModeClicked);
@@ -30,7 +33,7 @@ namespace InformaticsTrainerApp.Views
 
         public void OpenStudentMode()
         {
-            FormUtils.OpenFormAndSaveHierarchy(this, new StudentModeView());//, new Presenters.StudentModePresenter);
+            //FormUtils.OpenFormAndSaveHierarchy(this, new StudentModeView());//, new Presenters.StudentModePresenter);
         }
 
         public void OpenTeacherMode()
@@ -43,9 +46,10 @@ namespace InformaticsTrainerApp.Views
 
         }
 
-        public void Show()
+        public new void Show()
         {
-            ShowDialog();
+            context.MainForm = this;
+            Application.Run(context);
         }
 
         public void Exit()

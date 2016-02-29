@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InformaticsTrainerApp.Tools;
+using InformaticsTrainerApp.View_Interfaces;
 
 namespace InformaticsTrainerApp.Presenters
 {
-    class LoginPresenter : IPresenter
+    public class LoginPresenter : BasePresener<ILoginView>
     {
-        public void Run()
+        //model:   private readonly IModel model;
+
+        public LoginPresenter(IAppController controller, ILoginView view) : base(controller, view)// model
         {
-            throw new NotImplementedException();
+            //this.model= model
         }
+
     }
 }

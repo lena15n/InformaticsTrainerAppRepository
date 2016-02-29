@@ -23,17 +23,18 @@ namespace InformaticsTrainerApp
 
 
             var controller = new ApplicationController(new LightInjectAdapder())
-        .RegisterView<ILoginView, LoginView>()
-        .RegisterService<IMainView, MainView>()
-        .RegisterView<IStudentModeView, StudentModeView>()
-        .RegisterService<ITeacherModeView, TeacherModeView>();
+                .RegisterView<ILoginView, LoginView>()
+                .RegisterService<IMainView, MainView>()
+                .RegisterView<IStudentModeView, StudentModeView>()
+                .RegisterService<ITeacherModeView, TeacherModeView>()
+                .RegisterInstance(new ApplicationContext()); 
 
-            controller.Run<LoginPresenter>();
+            controller.Run<MainPresenter>();
 
 
-           /* MainView mainView = new MainView();
-            MainPresenter mainPresenter = new MainPresenter(mainView);
-            Application.Run(mainView);*/
+            /* MainView mainView = new MainView();
+             MainPresenter mainPresenter = new MainPresenter(mainView);
+             Application.Run(mainView);*/
         }
     }
 }

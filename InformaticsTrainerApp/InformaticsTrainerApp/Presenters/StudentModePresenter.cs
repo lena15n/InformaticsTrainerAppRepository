@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InformaticsTrainerApp.Tools;
+using InformaticsTrainerApp.View_Interfaces;
 
 namespace InformaticsTrainerApp.Presenters
 {
-    class StudentModePresenter : IPresenter
+    public class StudentModePresenter : BasePresener<IStudentModeView>
     {
-        public void Run()
+        //model:   private readonly IModel model;
+
+        public StudentModePresenter(IAppController controller, IStudentModeView view) : base(controller, view)// model
         {
-            throw new NotImplementedException();
+            //this.model= model
         }
+
+        //public method(){
+        //  Controller.Run<MainPresener, User>(user);// open new Form through the PRESENTER with a parameter
+        //}
     }
 }

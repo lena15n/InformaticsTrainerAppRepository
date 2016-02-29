@@ -1,4 +1,6 @@
-﻿using System;
+﻿using InformaticsTrainerApp.Tools;
+using InformaticsTrainerApp.View_Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.Presenters
 {
-    class TeacherModePresenter : IPresenter
+    public class TeacherModePresenter : BasePresener<ITeacherModeView>
     {
-        public void Run()
+        public TeacherModePresenter(IAppController controller, ITeacherModeView view) : base(controller, view)// model
         {
-            throw new NotImplementedException();
+            //this.model= model
         }
     }
 }

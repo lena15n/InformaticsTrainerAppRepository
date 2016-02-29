@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.View_Interfaces
 {
-    interface IMainView : IView
+    public interface IMainView : IView
     {
         event Action StudentModeClicked;
         event Action TeacherModeClicked;
