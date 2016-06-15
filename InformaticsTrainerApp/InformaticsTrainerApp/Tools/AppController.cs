@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace InformaticsTrainerApp.Tools
 {
-    public class ApplicationController : IAppController
+    public class AppController : IAppController
     {
         private readonly IContainer container;
 
-        public ApplicationController(IContainer container)
+        public AppController(IContainer container)
         {
             this.container = container;
             this.container.RegisterInstance<IAppController>(this);
@@ -48,7 +48,7 @@ namespace InformaticsTrainerApp.Tools
             presenter.Run();
         }
 
-        public void Run<TPresenter, TArgumnent>(TArgumnent argumnent) where TPresenter : class, IPresenter<TArgumnent>
+        public void Run<TPresenter, TArgument>(TArgument argumnent) where TPresenter : class, IPresenter<TArgument>
         {
             if (!container.IsRegistered<TPresenter>())
                 container.Register<TPresenter>();

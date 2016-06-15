@@ -3,9 +3,6 @@ using InformaticsTrainerApp.Tools;
 using InformaticsTrainerApp.View_Interfaces;
 using InformaticsTrainerApp.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InformaticsTrainerApp
@@ -22,7 +19,7 @@ namespace InformaticsTrainerApp
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            var controller = new ApplicationController(new LightInjectAdapder())
+            var controller = new AppController(new LightInjectAdapder())
                 .RegisterView<ILoginView, LoginView>()
                 .RegisterService<IMainView, MainView>()
                 .RegisterView<IStudentModeView, StudentModeView>()
@@ -31,10 +28,6 @@ namespace InformaticsTrainerApp
 
             controller.Run<MainPresenter>();
 
-
-            /* MainView mainView = new MainView();
-             MainPresenter mainPresenter = new MainPresenter(mainView);
-             Application.Run(mainView);*/
         }
     }
 }
